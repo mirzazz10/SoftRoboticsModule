@@ -52,22 +52,6 @@ def get_logging_data( node, root, direction = None, action_type = "grasp"):
     # cube_pos_data = root.Cube.getObject( "MechanicalObject").getData("position")
     # print(type(cube_pos_data), cube_pos_data.value)
     cube_pos = [round(float(k), cs) for k in root.Cube.mstate.position.value.reshape(-1)]  # orginal value method 
-
-    # cube_pos = [round(float(k), cs) for k in cube_pos_data.value.reshape(-1)]
-
-    # timeStep     
-   
-    # print( time)
-
-    # saving the image for the timestep ##
-
-
-    
-
-    # can include the goal pos, and the distance of the object from the goal position 
-     
-
-    # 
     
     return finger_data, cube_pos, action_data, time
 
