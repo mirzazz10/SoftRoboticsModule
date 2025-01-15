@@ -20,7 +20,6 @@ def add_goal_node(root):
     return goal_mo
 
 def createScene(rootNode):
-    """This is my first scene"""
     rootNode.addObject('RequiredPlugin', name='Sofa.Component.AnimationLoop') # Needed to use components [FreeMotionAnimationLoop]  
     rootNode.addObject('RequiredPlugin', name='Sofa.Component.Collision.Detection.Algorithm') # Needed to use components [BVHNarrowPhase,BruteForceBroadPhase,CollisionPipeline]  
     rootNode.addObject('RequiredPlugin', name='Sofa.Component.Collision.Detection.Intersection') # Needed to use components [LocalMinDistance]  
@@ -77,43 +76,7 @@ def createScene(rootNode):
 #     cube.addObject('UncoupledConstraintCorrection')  
 
 
-
-#    obj_file_path = "/home/rahman/Documents/bookObj/book.obj"
-
-
-#    totalMass = 0.03
-#    volume = 20.0
-#    inertiaMatrix=[1000., 0., 0., 0., 1000., 0., 0., 0., 1000.]
-
-
- #   cube = rootNode.addChild("Cube")
- #   cube.addObject('EulerImplicitSolver', name='odesolver')
- #   cube.addObject('CGLinearSolver', name='Solver', iterations=25, tolerance=1e-05, threshold=1e-05)
- #   cube.addObject('MechanicalObject', name="mstate", template="Rigid3", translation2=[0.0, -130.0, 10.0], rotation2=[0., 0., 0.], showObjectScale=25)
- #   cube.addObject('UniformMass', name="mass", vertexMass=[totalMass, volume, inertiaMatrix[:]])
- #   cube.addObject('UncoupledConstraintCorrection')
-
-    #### Collision subnode for the sphere
-  #  collision = cube.addChild('collision')
-  #  collision.addObject('MeshOBJLoader', name="loader", filename=obj_file_path, triangulate="true", scale=1.0)
-  #  collision.addObject('MeshTopology', src="@loader")
-  #  collision.addObject('MechanicalObject')
-  #  collision.addObject('TriangleCollisionModel')
-  #  collision.addObject('LineCollisionModel')
-  #  collision.addObject('PointCollisionModel')
-  #  collision.addObject('RigidMapping')
-
-    #### Visualization subnode for the sphere
-#    sphereVisu = cube.addChild("VisualModel")
- #   sphereVisu.loader = sphereVisu.addObject('MeshOBJLoader', name="loader", filename=obj_file_path)
-    # sphereVisu.addObject('OglModel', name="model", src="@loader", scale3d=[10]*3, color=[1.0, 1.0, 0.0, 1.0], updateNormals=False)
-  #  sphereVisu.addObject('OglModel', name="model", src="@loader", color=[1.0, 1.0, 0.0, 1.0], updateNormals=False)
-   # sphereVisu.addObject('RigidMapping')
-
-
-    # rest of the code 
     Gripper(logObj, rootNode)
-    ###### Camer logic integrate later ######
     SofaRuntime.importPlugin('SofaOpenglVisual')
     SofaRuntime.importPlugin("SofaComponentAll")
     rootNode.addObject('RequiredPlugin', name='Sofa.GL.Component.Shader')
@@ -124,11 +87,6 @@ def createScene(rootNode):
                         lookAt=[0,0,0], distance=37,
                         fieldOfView=45, zNear=0.63, zFar=55.69)
 
-    # start the simulator
-    # Sofa.Simulation.init(root)
-    # start the gui
-    # Sofa.Gui.GUIManager.Init("Recorded_Episode", "qt")
-    # Sofa.Gui.GUIManager.createGUI(self.root, __file__)
     return rootNode
 
 
